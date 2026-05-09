@@ -9,6 +9,8 @@ for chunk in io.lines(arg[1], 16 * 1024) do
     local buffer = decoder(chunk)
     if (redstone.getInput("bottom")) then
         volume = 1.5
+    else
+        volume = 0.5
     end
     while not spk.playAudio(buffer, volume) do
         os.pullEvent("speaker_audio_empty")
