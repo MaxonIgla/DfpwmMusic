@@ -12,7 +12,7 @@ for chunk in io.lines(arg[1], 1 * 1024 / 2) do
     else
         volume = 0.7
     end
-    while not spk.playAudio(buffer, volume) do
+    while not speaker.playAudio(buffer, volume) do
         os.pullEvent("speaker_audio_empty")
     end
 end
